@@ -17,11 +17,11 @@ const Display = (props:DisplayPropsType) => {
     }
     const disabledS = props.counter === props.maxCounter
     const disabledST = props.counter === props.minCounter
-    const disabled = () => props.counter === props.maxCounter;
+
     return (
         <div className={'body'}>
-            <div>{props.counter}</div>
-            <div>
+            <div className={'counter'}>{props.counter}</div>
+            <div className={'buttonBlock'}>
                 <Button  className={disabledS ?  'disabled': 'active-button' } callback = {addCounter} name={'SET'} />
                 <Button className={disabledST ?  'disabled': 'active-button'} callback = {resetCounter} name={'RESET'}/>
             </div>
