@@ -21,12 +21,10 @@ const Settings = (props:SettingsPropsType) => {
     return (
         <div className={'body'}>
             <div>
-                <Input className={'active-button'} changeCounter={changeMinCounter} value = {props.minCounter}/>
-                <Input className={'active-button'} changeCounter={changeMaxCounter} value = {props.maxCounter}/>
-                {/*<input type='number' className={'active-button'}  onChange={changeMaxCounter} value = {props.maxCounter}/>
-            </div>
-            <div>
-                <input type='number' className={'active-button'}  onChange={changeMinCounter} value = {props.minCounter}/>*/}
+                <span>MaxValue</span>
+                <Input className={'input'} changeCounter={changeMaxCounter} value = {props.maxCounter}/>
+                <span>MinValue</span>
+                <Input className={'input'} changeCounter={changeMinCounter} value = {props.minCounter}/>
             </div>
         </div>
     )

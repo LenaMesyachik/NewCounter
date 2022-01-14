@@ -15,14 +15,15 @@ const Display = (props:DisplayPropsType) => {
     const resetCounter = () => {
         props.setCounter(props.minCounter)
     }
+    const disabledS = props.counter === props.maxCounter
+    const disabledST = props.counter === props.minCounter
+    const disabled = () => props.counter === props.maxCounter;
     return (
         <div className={'body'}>
             <div>{props.counter}</div>
             <div>
-                <Button className={'active-button'} callback = {addCounter} />
-                <Button className={'active-button'} callback = {resetCounter} />
-                {/*<button  className={'active-button'} onClick={addCounter}></button>
-                <button className={'active-button'} onClick={resetCounter}></button>*/}
+                <Button  className={disabledS ?  'disabled': 'active-button' } callback = {addCounter} name={'SET'} />
+                <Button className={disabledST ?  'disabled': 'active-button'} callback = {resetCounter} name={'RESET'}/>
             </div>
         </div>
     )

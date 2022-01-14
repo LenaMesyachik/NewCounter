@@ -17,3 +17,15 @@
     width: 90px;
     height: 20px;
 }
+
+.input {
+    width: 120px;
+    height: 40px;
+}
+
+.disabled {
+    width: 90px;
+    height: 20px;
+    color: darkcyan;
+    background-color: crimson;
+}
