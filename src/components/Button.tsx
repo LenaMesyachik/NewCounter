@@ -5,8 +5,8 @@ type ButtonPropsType = {
     callback:()=>void
     className?:string
 }
-const Button = (props:ButtonPropsType) => {
 
+const Button = (props:ButtonPropsType) => {
     return (
         <div >
                 <button  className={props.className} onClick={props.callback}></button>

@@ -1,8 +1,9 @@
 import React, {ChangeEvent} from "react"
+import Input from "./components/Input";
 
 type SettingsPropsType = {
     setMaxCounter:(maxCounter:number)=>void
-    setMinCounter:(minCounter:number)=>void
+    setMinCounter:(value:number)=>void
     maxCounter:number
     minCounter:number
 }
@@ -10,20 +11,22 @@ type SettingsPropsType = {
 const Settings = (props:SettingsPropsType) => {
 
 
-    const changeMinCounter = (e:ChangeEvent<HTMLInputElement>) => {
-        props.setMinCounter(e.currentTarget.valueAsNumber)
+    const changeMinCounter = (value:number) => {
+        props.setMinCounter(value)
 
     }
-    const changeMaxCounter = (e:ChangeEvent<HTMLInputElement>) => {
-        props.setMaxCounter(e.currentTarget.valueAsNumber)
+    const changeMaxCounter = (value:number) => {
+        props.setMaxCounter(value)
     }
     return (
         <div className={'body'}>
             <div>
-                <input type='number' className={'active-button'}  onChange={changeMaxCounter} value = {props.maxCounter}/>
+                <Input className={'active-button'} changeCounter={changeMinCounter} value = {props.minCounter}/>
+                <Input className={'active-button'} changeCounter={changeMaxCounter} value = {props.maxCounter}/>
+                {/*<input type='number' className={'active-button'}  onChange={changeMaxCounter} value = {props.maxCounter}/>
             </div>
             <div>
-                <input type='number' className={'active-button'}  onChange={changeMinCounter} value = {props.minCounter}/>
+                <input type='number' className={'active-button'}  onChange={changeMinCounter} value = {props.minCounter}/>*/}
             </div>
         </div>
     )

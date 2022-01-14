@@ -1,28 +1,20 @@
-import React from "react"
-import './App.css'
-type DisplayPropsType = {
-    counter: number
-    setCounter:(counter:number)=>void
-    maxCounter:number
-    minCounter:number
+import React, {ChangeEvent} from "react"
+import './../App.css'
+
+
+type InputPropsType = {
+    className?:string
+    changeCounter:(value:number)=>void
+    value:number
 }
-const Display = (props:DisplayPropsType) => {
-    const addCounter = () => {
-        if (props.counter < props.maxCounter)
-            props.setCounter(props.counter + 1)
-    }
-    const resetCounter = () => {
-        props.setCounter(props.minCounter)
-    }
+
+const Input = (props:InputPropsType) => {
+
     return (
-        <div className={'body'}>
-            {props.counter}
             <div>
-                <button  className={'active-button'} onClick={addCounter}></button>
-                <button className={'active-button'} onClick={resetCounter}></button>
+                <input type='number' className={props.className}  onChange={(e:ChangeEvent<HTMLInputElement>)=>props.changeCounter(e.currentTarget.valueAsNumber)} value = {props.value}/>
             </div>
-        </div>
     )
 }
 
-export default Display
+export default Input
