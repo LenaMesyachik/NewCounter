@@ -1,6 +1,5 @@
 import React from "react"
 import './App.css'
-import Button from "./components/Button";
 type DisplayPropsType = {
     counter: number
     setCounter:(counter:number)=>void
@@ -17,12 +16,10 @@ const Display = (props:DisplayPropsType) => {
     }
     return (
         <div className={'body'}>
-            <div>{props.counter}</div>
+            {props.counter}
             <div>
-                <Button className={'active-button'} callback = {addCounter} />
-                <Button className={'active-button'} callback = {resetCounter} />
-                {/*<button  className={'active-button'} onClick={addCounter}></button>
-                <button className={'active-button'} onClick={resetCounter}></button>*/}
+                <button  className={'active-button'} onClick={addCounter}></button>
+                <button className={'active-button'} onClick={resetCounter}></button>
             </div>
         </div>
     )
