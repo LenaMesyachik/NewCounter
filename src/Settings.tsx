@@ -20,7 +20,7 @@ const Settings = (props:SettingsPropsType) => {
     }
     return (
         <div className={'body'}>
-            <div>
+            <div className={'inputBlock'}>
                 <span>MaxValue</span>
                 <Input className={'input'} changeCounter={changeMaxCounter} value = {props.maxCounter}/>
                 <span>MinValue</span>
