@@ -5,6 +5,12 @@ const counterReducer = (state:rootReducerType, action:any) => {
         case 'ADD-COUNTER' : {
             return {...state, counter: action.counter}
         }
+        case 'RESET-COUNTER' : {
+            return {...state, counter: action.minCounter}
+        }
+
+
+
 
 
         default:
@@ -16,3 +22,7 @@ type addCounterACType = {
     counter:number
 }
 const addCounterAC = (counter:number) => ({type:'ADD-COUNTER', counter:counter} as const)
+
+
+
+const resetCounterAC = (minCounter:number) => ({type: 'RESET-COUNTER', minCounter:minCounter} as const)
