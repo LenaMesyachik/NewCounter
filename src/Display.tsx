@@ -3,6 +3,7 @@ import './App.css'
 import Button from "./components/Button";
 import {useDispatch} from "react-redux";
 import {addCounterAC, resetCounterAC} from "./store/counterReducer";
+
 type DisplayPropsType = {
     counter: number
     maxCounter:number

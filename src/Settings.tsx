@@ -1,11 +1,9 @@
-import React, {ChangeEvent} from "react"
+import React from "react"
 import Input from "./components/Input";
 import {changeMaxCounterAC, changeMinCounterAC} from "./store/counterReducer";
 import {useDispatch} from "react-redux";
 
 type SettingsPropsType = {
-    /*setMaxCounter:(maxCounter:number)=>void
-    setMinCounter:(minCounter:number)=>void*/
     maxCounter:number
     minCounter:number
 }

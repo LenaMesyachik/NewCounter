@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from "react"
+import React, {useEffect} from "react"
 import Display from "./Display";
 import Settings from "./Settings";
 import './App.css'
 import {useDispatch, useSelector} from "react-redux";
 import {rootReducerType} from "./store/store";
-import {addCounterAC, changeMaxCounterAC, changeMinCounterAC, newValueAC} from "./store/counterReducer";
+import {newValueAC} from "./store/counterReducer";
 
 const App = () => {
 
@@ -12,9 +12,6 @@ const dispatch = useDispatch()
     const counter = useSelector<rootReducerType,number>(state => state.counter.counter)
     const minCounter = useSelector<rootReducerType,number>(state => state.counter.minCounter)
     const maxCounter = useSelector<rootReducerType,number>(state => state.counter.maxCounter)
-    /*const [counter, setCounter] = useState(0)*/
-    /*const [minCounter, setMinCounter] = useState(0)*/
- /*   const [maxCounter, setMaxCounter] = useState(5)*/
 
     useEffect(() => {
         const valueString = localStorage.getItem('currentCounterValue')
