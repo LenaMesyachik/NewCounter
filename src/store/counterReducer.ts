@@ -1,9 +1,18 @@
-import {rootReducerType} from "./store";
+type InitialStateType  = {
+    counter:number,
+    minCounter:number,
+    maxCounter:number
+}
+const initialState:InitialStateType = {
+    counter:0,
+    minCounter:0,
+    maxCounter:5
+}
 
-const counterReducer = (state:rootReducerType, action:AllActiveType) => {
+export const counterReducer = (state: InitialStateType = initialState, action: AllActiveType) => {
     switch (action.type) {
         case 'ADD-COUNTER' : {
-            return {...state, counter: action.counter}
+            return {...state, counter: action.counter + 1}
         }
         case 'RESET-COUNTER' : {
             return {...state, counter: action.counter}
@@ -16,39 +25,38 @@ const counterReducer = (state:rootReducerType, action:AllActiveType) => {
         }
 
 
-
         default:
             return state
     }
 }
 
 
- export type AllActiveType = addCounterACType | resetCounterACType | changeMinCounterACType | changeMaxCounterACType
+export type AllActiveType = addCounterACType | resetCounterACType | changeMinCounterACType | changeMaxCounterACType
 
 type addCounterACType = {
-    type:'ADD-COUNTER',
-    counter:number
+    type: 'ADD-COUNTER',
+    counter: number
 }
-const addCounterAC = (counter:number) => ({type:'ADD-COUNTER', counter:counter} as const)
+const addCounterAC = (counter: number) => ({type: 'ADD-COUNTER', counter: counter} as const)
 
 
 type resetCounterACType = {
-    type:'RESET-COUNTER',
-    counter:number
+    type: 'RESET-COUNTER',
+    counter: number
 }
-const resetCounterAC = (counter:number) => ({type: 'RESET-COUNTER', counter:counter} as const)
+const resetCounterAC = (counter: number) => ({type: 'RESET-COUNTER', counter: counter} as const)
 
 
 type changeMinCounterACType = {
-    type:'CHANGE-MIN-COUNTER',
-    minCounter:number
+    type: 'CHANGE-MIN-COUNTER',
+    minCounter: number
 }
 
-const changeMinCounterAC = (minCounter:number) => ({type: 'CHANGE-MIN-COUNTER',minCounter:minCounter} as const)
+const changeMinCounterAC = (minCounter: number) => ({type: 'CHANGE-MIN-COUNTER', minCounter: minCounter} as const)
 
 type changeMaxCounterACType = {
-    type:'CHANGE-MAX-COUNTER',
-    maxCounter:number
+    type: 'CHANGE-MAX-COUNTER',
+    maxCounter: number
 }
 
-const changeMaxCounterAC = (maxCounter:number) => ({type: 'CHANGE-MAX-COUNTER',maxCounter:maxCounter} as const)
+const changeMaxCounterAC = (maxCounter: number) => ({type: 'CHANGE-MAX-COUNTER', maxCounter: maxCounter} as const)

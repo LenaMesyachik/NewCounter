@@ -1,6 +1,9 @@
 import {combineReducers, createStore} from "redux";
-const rootReducer = combineReducers({
+import {counterReducer} from "./counterReducer";
 
+
+const rootReducer = combineReducers({
+counter: counterReducer
 })
 
 export type rootReducerType = ReturnType<typeof rootReducer>
