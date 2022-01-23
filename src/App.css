@@ -32,8 +32,8 @@
 .disabled {
     width: 90px;
     height: 40px;
-    color: darkcyan;
-    background-color: crimson;
+    color: white;
+    background-color: darkslategrey;
 }
 .counter {
     border: 1px solid black;
