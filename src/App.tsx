@@ -9,9 +9,8 @@ const App = () => {
     const [minCounter, setMinCounter] = useState(0)
     const [maxCounter, setMaxCounter] = useState(5)
 
-
     useEffect(() => {
-        const valueString = localStorage.getItem('counterValue')
+        const valueString = localStorage.getItem('currentCounterValue')
         console.log('OK')
         if (valueString) {
             console.log('OK2')
@@ -21,7 +20,7 @@ const App = () => {
     }, [])
     useEffect(() => {
         console.log('OK GO')
-        localStorage.setItem('counterValue', JSON.stringify(counter))
+        localStorage.setItem('currentCounterValue', JSON.stringify(counter))
     }, [counter])
 
 
