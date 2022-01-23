@@ -1,19 +1,21 @@
 import React from "react"
 import './App.css'
 import Button from "./components/Button";
+import {useDispatch} from "react-redux";
+import {addCounterAC, resetCounterAC} from "./store/counterReducer";
 type DisplayPropsType = {
     counter: number
-    setCounter:(counter:number)=>void
     maxCounter:number
     minCounter:number
 }
 const Display = (props:DisplayPropsType) => {
+    const dispatch = useDispatch()
     const addCounter = () => {
         if (props.counter < props.maxCounter)
-            props.setCounter(props.counter + 1)
+           dispatch(addCounterAC(props.counter))
     }
     const resetCounter = () => {
-        props.setCounter(props.minCounter)
+        dispatch(resetCounterAC(props.minCounter))
     }
     const disabledS = props.counter === props.maxCounter
     const disabledST = props.counter === props.minCounter

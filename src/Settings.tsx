@@ -1,22 +1,26 @@
 import React, {ChangeEvent} from "react"
 import Input from "./components/Input";
+import {changeMaxCounterAC, changeMinCounterAC} from "./store/counterReducer";
+import {useDispatch} from "react-redux";
 
 type SettingsPropsType = {
-    setMaxCounter:(maxCounter:number)=>void
-    setMinCounter:(value:number)=>void
+    /*setMaxCounter:(maxCounter:number)=>void
+    setMinCounter:(minCounter:number)=>void*/
     maxCounter:number
     minCounter:number
 }
 
+
+
+
 const Settings = (props:SettingsPropsType) => {
 
-
-    const changeMinCounter = (value:number) => {
-        props.setMinCounter(value)
-
+    const dispatch = useDispatch()
+    const changeMinCounter = (minCounter:number) => {
+        dispatch(changeMinCounterAC(minCounter))
     }
-    const changeMaxCounter = (value:number) => {
-        props.setMaxCounter(value)
+    const changeMaxCounter = (maxCounter:number) => {
+        dispatch(changeMaxCounterAC(maxCounter))
     }
     return (
         <div className={'body'}>
