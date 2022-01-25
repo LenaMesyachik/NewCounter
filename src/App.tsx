@@ -21,7 +21,7 @@ const dispatch = useDispatch()
             let newValue = JSON.parse(valueString)
             dispatch(newValueAC(newValue))
         }
-    }, [])
+    }, [counter])
     useEffect(() => {
         console.log('OK GO')
         localStorage.setItem('currentCounterValue', JSON.stringify(counter))

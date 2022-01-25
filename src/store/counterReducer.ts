@@ -11,7 +11,7 @@ const initialState:InitialStateType = {
     newValue:0
 }
 
-export const CounterReducer = (state: InitialStateType = initialState, action: AllActiveType) => {
+export const CounterReducer = (state: InitialStateType = initialState, action: AllActiveType):InitialStateType => {
     switch (action.type) {
         case 'ADD-COUNTER' : {
             return {...state, counter: action.counter + 1}
